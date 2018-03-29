@@ -1,0 +1,301 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "suzuki violin",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": []
+        },
+        {
+          "name": "GetSongIntent",
+          "samples": [
+            "for a song",
+            "for my review piece",
+            "for another song",
+            "to give me a song",
+            "what song I should play",
+            "what song should I review",
+            "what is my review piece",
+            "what song I should practice",
+            "get me a song",
+            "get a song",
+            "tell me a song to practice",
+            "tell me a song to play",
+            "tell me a review piece"
+          ]
+        },
+        {
+          "name": "TellSongIntent",
+          "samples": [
+            "I am on song {SongName}",
+            "I am on {SongName}",
+            "I am learning {SongName}",
+            "{SongName}"
+          ],
+          "slots": [
+            {
+              "name": "SongName",
+              "type": "SUZUKI_SONG"
+            }
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "id": "song_id_1_1",
+              "name": {
+                "value": "twinkle twinkle little star",
+                "synonyms": ["twinkle twinkle", "twinkles"]
+              }
+            },
+            {
+              "id": "song_id_1_2",
+              "name": {
+                "value": "lightly row"
+              }
+            },
+            {
+              "id": "song_id_1_3",
+              "name": {
+                "value": "song of the wind"
+              }
+            },
+            {
+              "id": "song_id_1_4",
+              "name": {
+                "value": "go tell aunt rhody"
+              }
+            },
+            {
+              "id": "song_id_1_5",
+              "name": {
+                "value": "o come little children"
+              }
+            },
+            {
+              "id": "song_id_1_6",
+              "name": {
+                "value": "may song"
+              }
+            },
+            {
+              "id": "song_id_1_7",
+              "name": {
+                "value": "long long ago"
+              }
+            },
+            {
+              "id": "song_id_1_8",
+              "name": {
+                "value": "allegro"
+              }
+            },
+            {
+              "id": "song_id_1_9",
+              "name": {
+                "value": "perpetual motion"
+              }
+            },
+            {
+              "id": "song_id_1_10",
+              "name": {
+                "value": "allegretto"
+              }
+            },
+            {
+              "id": "song_id_1_11",
+              "name": {
+                "value": "andantino"
+              }
+            },
+            {
+              "id": "song_id_1_12",
+              "name": {
+                "value": "etude"
+              }
+            },
+            {
+              "id": "song_id_1_13",
+              "name": {
+                "value": "minuet one",
+                "synonyms": ["minuet one bach"]
+              }
+            },
+            {
+              "id": "song_id_1_14",
+              "name": {
+                "value": "minuet two",
+                "synonyms": ["minuet two bach"]
+              }
+            },
+            {
+              "id": "song_id_1_15",
+              "name": {
+                "value": "minuet three",
+                "synonyms": ["minuet three bach"]
+              }
+            },
+            {
+              "id": "song_id_1_16",
+              "name": {
+                "value": "the happy farmer",
+                "synonyms": ["happy farmer"]
+              }
+            },
+            {
+              "id": "song_id_1_17",
+              "name": {
+                "value": "gossec gavotte",
+                "synonyms": ["gavotte gossec", "gavotte by gossec"]
+              }
+            },
+            {
+              "id": "song_id_2_1",
+              "name": {
+                "value": "chorus from judas maccabaeus",
+                "synonyms": ["chorus"]
+              }
+            },
+            {
+              "id": "song_id_2_2",
+              "name": {
+                "value": "musette"
+              }
+            },
+            {
+              "id": "song_id_2_3",
+              "name": {
+                "value": "hunters chorus"
+              }
+            },
+            {
+              "id": "song_id_2_4",
+              "name": {
+                "value": "long long ago book two"
+              }
+            },
+            {
+              "id": "song_id_2_5",
+              "name": {
+                "value": "waltz"
+              }
+            },
+            {
+              "id": "song_id_2_6",
+              "name": {
+                "value": "bouree book two",
+                "synonyms": ["bouree handel", "handel bouree"]
+              }
+            },
+            {
+              "id": "song_id_2_7",
+              "name": {
+                "value": "the two grenadiers",
+                "synonyms": ["two grenadiers"]
+              }
+            },
+            {
+              "id": "song_id_2_8",
+              "name": {
+                "value": "theme from witches dance",
+                "synonyms": ["witches dance"]
+              }
+            },
+            {
+              "id": "song_id_2_9",
+              "name": {
+                "value": "gavotte from mignon"
+              }
+            },
+            {
+              "id": "song_id_2_10",
+              "name": {
+                "value": "lully gavotte",
+                "synonyms": ["gavotte lully", "gavotte by lully"]
+              }
+            },
+            {
+              "id": "song_id_2_11",
+              "name": {
+                "value": "minuet in g"
+              }
+            },
+            {
+              "id": "song_id_2_12",
+              "name": {
+                "value": "boccherini minuet",
+                "synonyms": ["minuet boccherini", "minuet by boccherini"]
+              }
+            },
+            {
+              "id": "song_id_3_1",
+              "name": {
+                "value": "martini gavotte",
+                "synonyms": ["gavotte martini", "gavotte by martini"]
+              }
+            },
+            {
+              "id": "song_id_3_2",
+              "name": {
+                "value": "bach minuet",
+                "synonyms": ["minuet bach", "minuet by bach"]
+              }
+            },
+            {
+              "id": "song_id_3_3",
+              "name": {
+                "value": "gavotte in g minor"
+              }
+            },
+            {
+              "id": "song_id_3_4",
+              "name": {
+                "value": "humoresque"
+              }
+            },
+            {
+              "id": "song_id_3_5",
+              "name": {
+                "value": "becker gavotte",
+                "synonyms": ["gavotte becker", "gavotte by becker"]
+              }
+            },
+            {
+              "id": "song_id_3_6",
+              "name": {
+                "value": "gavotte in d major"
+              }
+            },
+            {
+              "id": "song_id_3_7",
+              "name": {
+                "value": "bouree book three",
+                "synonyms": ["bouree bach", "bach bouree"]
+              }
+            }
+          ],
+          "name": "SUZUKI_SONG"
+        }
+      ]
+    }
+  }
+}
