@@ -47,6 +47,10 @@
             "I am on song {SongName}",
             "I am on {SongName}",
             "I am learning {SongName}",
+            "my song is {SongName}",
+            "my current song is {SongName}",            
+            "my review piece is {SongName}",
+            "it is {SongName}",
             "{SongName}"
           ],
           "slots": [
@@ -290,6 +294,24 @@
               "name": {
                 "value": "bouree book three",
                 "synonyms": ["bouree bach", "bach bouree"]
+              }
+            },
+            {
+              "id": "song_id_4_1",
+              "name": {
+                "value": "concerto number two movement three"
+              }
+            },
+            {
+              "id": "song_id_4_2",
+              "name": {
+                "value": "concerto number five movement one"
+              }
+            },
+            {
+              "id": "song_id_4_3",
+              "name": {
+                "value": "concerto number five movement three"
               }
             }
           ],
