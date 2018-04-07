@@ -160,17 +160,18 @@ var handlers = {
     if(!hasSong(this.attributes)){
       console.log('No current song');
       this.emit('RequestSongIntent');
+    } else {
+      console.log('Has current song');
+      let currentSongId = this.attributes[CURRENT_SONG_ATTRIBUTE]
+      console.log('current song ID: ' + currentSongId);
+      var songDetail = songIdToSongDetailsMap[currentSongId];
+
+      var reviewSongId = findReviewPiece(songDetail);
+      var reviewSongDetail = songIdToSongDetailsMap[reviewSongId];
+
+      this.response.speak('Please play ' + reviewSongDetail.name + ", from book " + reviewSongDetail.bookNumber.toString().toLowerCase());
+      this.emit(':responseReady');
     }
-    console.log('Has current song');
-    let currentSongId = this.attributes[CURRENT_SONG_ATTRIBUTE]
-    console.log('current song ID: ' + currentSongId);
-    var songDetail = songIdToSongDetailsMap[currentSongId];
-
-    var reviewSongId = findReviewPiece(songDetail);
-    var reviewSongDetail = songIdToSongDetailsMap[reviewSongId];
-
-    this.response.speak('Please play ' + reviewSongDetail.name);
-    this.emit(':responseReady');
   },
   'TellSongIntent': function () {
 
@@ -184,10 +185,10 @@ var handlers = {
       console.log('valid data');
       var songDetail = songIdToSongDetailsMap[songData.id];
       console.log("songDetail: " + JSON.stringify(songDetail));
-      attributes[CURRENT_SONG_ATTRIBUTE] = songData.id;
-      speechOutput = "Great. You are playing " + songDetail.name + " in book " + songDetail.book.toString().toLowerCase( + ". Is that correct?");
+      this.attributes[CURRENT_SONG_ATTRIBUTE] = songData.id;
+      speechOutput = "Great. You are playing " + songDetail.name + ", in book " + songDetail.bookNumber.toString().toLowerCase() + ". Is that correct?";
     } else {
-      console.log('invalid data');
+      console.log('song name did not resolve to a defined suzuki song');
       speechOutput = "I didn't quite get that. Could you please tell me which song you are on again?";
     }
 
@@ -291,7 +292,7 @@ function findReviewPiece(currentSongDetail) {
 }
 
 function pickReviewBookNumber(currentSongDetail){
-  var usePreviousBook = false;
+  var reviewBookNumber = 1;
 
   if(currentSongDetail.bookNumber < 3 || Math.random() > 0.8)
     reviewBookNumber = pickRecentReviewBookNumber(currentSongDetail);
