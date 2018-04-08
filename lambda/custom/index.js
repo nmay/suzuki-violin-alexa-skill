@@ -116,10 +116,13 @@ exports.handler = function (event, context) {
 
 var handlers = {
   'LaunchRequest': function () {
-    this.emit('SayHello');
+    //this.emit('RequestSongIntent');
+    console.log('Launch Request');
   },
   'SessionEndedRequest': function () {
     console.log('Session ended with reason: ' + this.event.request.reason);
+    if(this.event.request.error)
+      console.log('Error Type: ' + this.event.request.error.type + '; Error Message: ' + this.event.request.error.message);
   },
   'AMAZON.StopIntent': function () {
     this.response.speak('Bye');
@@ -135,21 +138,24 @@ var handlers = {
     this.emit(':responseReady');
   },
   'AMAZON.YesIntent': function () {
+    console.log("Entering YesIntent.");
     this.response.speak('Perfect. I can now start giving you review pieces.');
     this.emit(':responseReady');
   },
   'AMAZON.NoIntent': function () {
-    this.response.speak("I'm sorry. Let's try that again. Please tell me the name of your current review piece");
+    console.log("Entering NoIntent.");
+    this.attributes[CURRENT_SONG_ATTRIBUTE] = NO_SONG;
+    this.response.speak("I'm sorry. Let's try that again. Please tell me the name of your current song.");
     this.emit(':responseReady');
   },
   'RequestSongIntent': function () {
 
-    let speechOutput = 'Please tell me the name of your current review piece';
+    let speechOutput = 'Before I can give you songs to review, please tell me the name of your current song.';
     this.response.speak(speechOutput).listen(speechOutput)
     this.emit(':responseReady');
   },
   'GetSongIntent': function () {
-
+    console.log("Entering GetSongIntent.");
     if(Object.keys(this.attributes).length === 0) {
       //this.attributes['previousReviewSong'] = 0;
       //this.attributes['bookNumber'] = 0;
@@ -294,10 +300,10 @@ function findReviewPiece(currentSongDetail) {
 function pickReviewBookNumber(currentSongDetail){
   var reviewBookNumber = 1;
 
-  if(currentSongDetail.bookNumber < 3 || Math.random() > 0.8)
+  if(currentSongDetail.bookNumber <= 3 || Math.random() > 0.8)
     reviewBookNumber = pickRecentReviewBookNumber(currentSongDetail);
   else 
-    reviewBookNumber = pickReviewBookNumberFromAllPreviousBooks(currentSongDetail);
+    reviewBookNumber = pickEarlierReviewBookNumber(currentSongDetail);
 
   console.log("Picked review book number " + reviewBookNumber);
   return reviewBookNumber;
@@ -323,7 +329,7 @@ function pickEarlierReviewBookNumber(currentBookNumber){
   console.log("Picking review book number from all previous books.");
 
   // a book # less than three should never be passed in, but adding the checks below just in case.
-  if(currentBookNumber <= 2)
+  if(currentBookNumber <= 3)
     return 1;
   
   var max = currentBookNumber - 2;
