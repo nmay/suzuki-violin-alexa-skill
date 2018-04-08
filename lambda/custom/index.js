@@ -25,9 +25,9 @@ const songIdToSongDetailsMap = {
   "song_id_2_1": {"name": "Chorus from Judas Maccabaeus", "bookNumber": 2, "songIndex": 0},
   "song_id_2_2": {"name": "Musette", "bookNumber": 2, "songIndex": 1},
   "song_id_2_3": {"name": "Hunters Chorus", "bookNumber": 2, "songIndex": 2},
-  "song_id_2_4": {"name": "Long Long Ago Book two", "bookNumber": 2, "songIndex": 3},
+  "song_id_2_4": {"name": "Long Long Ago", "bookNumber": 2, "songIndex": 3},
   "song_id_2_5": {"name": "waltz", "bookNumber": 2, "songIndex": 4},
-  "song_id_2_6": {"name": "bouree book two", "bookNumber": 2, "songIndex": 5},
+  "song_id_2_6": {"name": "bouree", "bookNumber": 2, "songIndex": 5},
   "song_id_2_7": {"name": "the two grenadiers", "bookNumber": 2, "songIndex": 6},
   "song_id_2_8": {"name": "theme from witches dance", "bookNumber": 2, "songIndex": 7},
   "song_id_2_9": {"name": "gavotte from mignon", "bookNumber": 2, "songIndex": 8},
@@ -40,7 +40,7 @@ const songIdToSongDetailsMap = {
   "song_id_3_4": {"name": "humoresque", "bookNumber": 3, "songIndex": 3},
   "song_id_3_5": {"name": "becker gavotte", "bookNumber": 3, "songIndex": 4},
   "song_id_3_6": {"name": "gavotte in d major", "bookNumber": 3, "songIndex": 5},
-  "song_id_3_7": {"name": "bouree book three", "bookNumber": 3, "songIndex": 6},
+  "song_id_3_7": {"name": "bouree", "bookNumber": 3, "songIndex": 6},
   "song_id_4_1": {"name": "concerto number two, movement three", "bookNumber": 4, "songIndex": 0},
   "song_id_4_2": {"name": "concerto number five, movement one", "bookNumber": 4, "songIndex": 1},
   "song_id_4_2": {"name": "concerto number five, movement three", "bookNumber": 4, "songIndex": 2}
@@ -157,8 +157,6 @@ var handlers = {
   'GetSongIntent': function () {
     console.log("Entering GetSongIntent.");
     if(Object.keys(this.attributes).length === 0) {
-      //this.attributes['previousReviewSong'] = 0;
-      //this.attributes['bookNumber'] = 0;
       console.log('Attributes have a length of zero');
     }
 
