@@ -1,2 +1,5 @@
+# node stuff
 **/node_modules
 
+# ask cli config
+.ask

@@ -1,10 +1,11 @@
 {
-  "name": "skill-sample-nodejs-hello-world",
+  "name": "suzuki-violin-review-song",
   "version": "1.0.0",
-  "description": "Hello world sample skill",
+  "description": "A skill to help people pick different review songs when learning to play violin using the Suzuki methodology",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "license": "MIT",
   "dependencies": {
     "alexa-sdk": "^1.0.0"
   }
