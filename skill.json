@@ -3,19 +3,20 @@
     "publishingInformation": {
       "locales": {
         "en-US": {
-          "summary": "Sample Short Description",
+          "summary": "Selects songs to review for Suzuki Violin students",
           "examplePhrases": [
             "Alexa ask suzuki violin for a song.",
             "Alexa ask suzuki violin what song I should play.",
-            "Start suzuki violin and tell me a song to play."
+            "Alexa get a practice song from suzuki violin.",
+            "Alexa tell suzuki violin my current song is the happy farmer."
           ],
           "keywords": [
             "Violin",
             "suzuki",
             "practice"
           ],
-          "name": "Suzuki Violin",
-          "description": "Practice suzuki violin style."
+          "name": "Suzuki Violin Review",
+          "description": "Helps players ensure they are practicing different review pieces, rather than always playing the same songs."
         }
       },
       "isAvailableWorldwide": true,

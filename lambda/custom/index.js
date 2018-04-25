@@ -148,6 +148,30 @@ var handlers = {
     this.response.speak("I'm sorry. Let's try that again. Please tell me the name of your current song.");
     this.emit(':responseReady');
   },
+  'MoveToNextSongIntent': function () {
+
+    // TODO: Finish this function
+    let speechOutput = 'Please finish this function.';
+    this.response.speak(speechOutput)
+    this.emit(':responseReady');
+  },
+  'GetCurrentSongIntent': function () {
+    console.log("Entering GetCurrentSongIntent.");
+
+    if(!hasSong(this.attributes)){
+      console.log('No current song');
+      this.response.speak("You do not have a current review piece.")
+    } else {
+      console.log('Has current song');
+      let currentSongId = this.attributes[CURRENT_SONG_ATTRIBUTE]
+      console.log('current song ID: ' + currentSongId);
+      var songDetail = songIdToSongDetailsMap[currentSongId];
+      this.response.speak('Your current review piece is ' + songDetail.name + ", in book " + songDetail.bookNumber.toString().toLowerCase());
+    }
+
+    // TODO: Test this function
+    this.emit(':responseReady');
+  },
   'RequestSongIntent': function () {
 
     let speechOutput = 'Before I can give you songs to review, please tell me the name of your current song.';
@@ -196,8 +220,7 @@ var handlers = {
       speechOutput = "I didn't quite get that. Could you please tell me which song you are on again?";
     }
 
-    //this.emit(':saveState', true); // Be sure to call :saveState to persist your session attributes in DynamoDB
-    this.response.speak(speechOutput);
+    this.response.speak(speechOutput).listen(speechOutput);
     this.emit(':responseReady');
   },
   'Unhandled': function () {

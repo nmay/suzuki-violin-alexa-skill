@@ -27,18 +27,45 @@
           "name": "GetSongIntent",
           "samples": [
             "for a song",
-            "for my review piece",
+            "for a review piece",
+            "for a review song",
+            "for a practice song",
+            "for a practice piece",
             "for another song",
+            "for another review piece",
+            "for another practice piece",
             "to give me a song",
+            "to give me a review piece",
+            "to give me a practice piece",
             "what song I should play",
             "what song should I review",
-            "what is my review piece",
+            "what song should I practice",
             "what song I should practice",
             "get me a song",
             "get a song",
+            "get me a review piece",
+            "get a practice song",
             "tell me a song to practice",
             "tell me a song to play",
             "tell me a review piece"
+          ]
+        },
+        {
+          "name": "GetCurrentSongIntent",
+          "samples": [
+            "for my current song",
+            "for my current piece",
+            "what is my current song",
+            "what is my current piece"
+          ]
+        },
+        {
+          "name": "MoveToNextSongIntent",
+          "samples": [
+            "I moved to the next song",
+            "I passed off my current piece",
+            "I am on the next song",
+            "I am on the next piece"
           ]
         },
         {
